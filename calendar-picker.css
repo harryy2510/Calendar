@@ -1,0 +1,88 @@
+.calendar {
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    text-transform: uppercase;
+    color: #7a7a7a;
+}
+
+.calendar-header-button {
+    border: none;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    padding: 16px;
+    opacity: 0.8;
+    background-size: 16px 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.calendar-week, .calendar-weekdates {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.calendar-weekdays {
+    background-color: #518fcb;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 8px;
+}
+
+.calendar-weekdates {
+    padding: 8px;
+}
+
+.calendar-day {
+    flex: calc(100% / 7);
+    padding: 4px;
+}
+
+.calendar-date {
+    flex: calc(100% / 7);
+    border: none;
+    background-color: transparent;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #7a7a7a;
+    border-radius: 4px;
+}
+
+.calendar-date:disabled {
+    pointer-events: none;
+}
+
+.calendar-date:not(:disabled) {
+    cursor: pointer;
+}
+
+.calendar-date:not(:disabled):hover {
+    background-color: rgba(0,0,0,0.08);
+}
+
+.calendar-date.active, .calendar-date.active:not(:disabled):hover {
+    background-color: #518fcb;
+    color: #ffffff;
+}
+
+.calendar-back-arrow {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAOaAAADmgHumOXVAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAR1QTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADGXzGQAAAF50Uk5TAAECAwQFBgcICQoMDQ4PExUoKjE1Nzg5Ojs8QUdKU2ZncHd4e4OIjI+QkZKTlJWWl5iZmpucnZ6foKGio6Smp6ytrq+xsrS1w8TFxsfIytDU3N7h4+bn6er2+vv8/WgerYEAAAF9SURBVHja7dvXTgJRFIXhrYCKYu+9NxR77wW7oGCXcb3/Y3hnognGmDh/4uz1At+fUGYuzjHz+Xw+3y9W20TqjZnbQPeHrZQ/8CRJUmk8gfjD+lg2wfrScYL1paM460sHcdaXJmFfb12sL+VgX6/VrC+1wb46YD9Isr5uYF/9sL8F++d10fYv3I+2n2L9S/fdB/0r96Pt17P+tfvug37O/Wj7Daz/R3s8G02SviQVellfCrpZXyqmWF8aMesjfZ1Y6g4NeLYxsbNTOuAh8gH4R4B/CeGfYYH+I9qn/4qH4IdRPsY+Dl9a2BeCfDP5SlTcG4z/8KVwysLYdwXTeEEaL5jBC2a9QBm8YK6CLpjHCxbwgkUv0BJesIwXrHiBVvGCNbxgvZIu2PACbeIFW3jBthdoBy/YjdEFEwYXBJ10QUhnSssXlGrognaDC0I61Mof6+UPNpc52t1jbEHaDC3IVhlaELr/pQDwP19yIXz+mg9/0cmMvurl8/l8/23vYJ2kF9xiFD8AAAAASUVORK5CYII=');
+}
+.calendar-next-arrow {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAOaAAADmgHumOXVAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAASxQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5mjWdwAAAGN0Uk5TAAECAwQFBg0ODxAREhMUFRcYGx4jJC84OkVHS01SVFdYZWdpamtsbW5vcHuDh5SXmJmam5ydnp+goaKjpKWmp6ipqqusr7S2uLq7ycrLzM3Oz9DR0tbd3uHm5+jp6+zu+fv+2MJETwAAAbRJREFUeNrt20dSQkEURuGLmAnmLJgTmHNAzJgVFcWAqNz978GBUooUlgPt86zX/wbONyDTLWJnZ2dn91uraG0k86GzZ9WHWD2Ur43r27JhpO9Pan65AbaPCAr6gOBL37xgXxUV9GnxcoPm+p4nZQXNqqwgpCVmStCtsKBJacE9LegtDdAhI4I9WlBzbAUOEJw4WjBs5EPhqRU4QHBGC3zOFowYEZxbgS9JC/xWIP4LRwtGTQgCvODSChwguKIFwe8EY0YEKSv4sSA4fvCoxvchCGcUWV7Qo9QiIiLSkFVWMKHKCo5IgHaKZFHAbZUouygNSNCAO9cDEvyDME0/DXfpF6II/VJceQ2/GUn7C9sXabthP5CIVEcTGbL/d3/pTcH9aZf3Z+D+LPvl1DPn8v483F9g+2WLcH+J/aES7y/D/RW4v+ry/hrb98bYv+286y7vx+H+BtzfdHDfwBGO8i24v+3uvkzC/Q76CFEaPs7XSB8n7KIPVIbpQ60t9LFe/GCz9MN9kcPivtnj9XUptl8kAK5YFAiQSyafBEhfJLDz3oeu+YhImL3oJIJf9bKzs7P7v3sFWQwCyG7a6PMAAAAASUVORK5CYII=');
+}
